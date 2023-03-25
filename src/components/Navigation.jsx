@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Home from '../pages/Home'
 import Login from "../pages/Login"
+import NotFound from '../pages/NotFound'
 import SignUp from '../pages/SignUp'
 import StudentRegistrationForm from '../pages/StudentRegistrationForm'
 import StudentRegistrationList from '../pages/StudentRegistrationList'
@@ -22,6 +23,7 @@ export default function Navigation() {
         <Route path='/signup' element={<SignUp />} />
         <Route path='/studentregistrationform' element={<StudentRegistrationForm />} />
         <Route path='/studentregistrationlist' element={<StudentRegistrationList />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </Router>
   )
