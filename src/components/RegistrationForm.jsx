@@ -9,7 +9,7 @@ export default function RegistrationForm() {
         </select>
         <label htmlFor="input-credits">Credits: </label>
         <input type="number" name="credits" id="input-credits" />
-        <fieldset>
+        <fieldset id='attendence-type'>
             <legend>Attendence Type</legend>
             <label htmlFor="radio-face">Face-to-Face</label>
             <input type="radio" name="attendenceType" id="radio-face" value="Face-to-Face" />
@@ -18,7 +18,7 @@ export default function RegistrationForm() {
             <label htmlFor="radio-async-online">Asynchronous Online</label>
             <input type="radio" name="attendenceType" id="radio-async-online" value="Asynchronous Online" />
         </fieldset>
-        <fieldset>
+        <fieldset id='book-format'>
             <legend>Book Format</legend>
             <label htmlFor="checkbox-physical">Physical</label>
             <input type="checkbox" name="bookFormat" id="checkbox-physical" />
