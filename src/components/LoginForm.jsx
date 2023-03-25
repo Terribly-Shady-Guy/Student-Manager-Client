@@ -4,8 +4,18 @@ import { useForm } from 'react-hook-form'
 export default function LoginForm() {
   const { register, handleSubmit } = useForm();
 
-  function onSubmit(data) {
-    console.log(data);
+  const onSubmit = async (formData) => {
+    const response = await fetch("http://localhost:5119/api/authentication", {
+      method: "POST",
+      headers: {"content-type": "application/json"},
+      body: JSON.stringify(formData)
+    });
+
+    if (response.ok) {
+      const token = await response.json();
+
+      window.localStorage.setItem("accessToken", token);
+    }
   }
 
   return (
