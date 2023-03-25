@@ -15,6 +15,12 @@ export default function StudentRegistrationList() {
           attendenceType: "Face-to-Face",
           credits: 3,
           bookFormat: "Physical"
+        },
+        {
+          courseNumber: "MATH 1101",
+          attendenceType: "Asyncronous Online",
+          credits: 3,
+          bookFormat: "Digital, Audio"
         }
       ]
     }
