@@ -6,8 +6,8 @@ function App() {
     <div className="App">
       <header>
         <h1>Buffalo College</h1>
-        <Navigation />
       </header>
+      <Navigation />
       <footer>
         <p>Test</p>
       </footer>
