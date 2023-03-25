@@ -1,9 +1,9 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
-import Login from "./pages/Login"
-import SignUp from './pages/SignUp'
-import StudentForm from './pages/StudentForm'
-import StudentRegistrationList from './pages/StudentRegistrationList'
+import Login from "../pages/Login"
+import SignUp from '../pages/SignUp'
+import StudentForm from '../pages/StudentForm'
+import StudentRegistrationList from '../pages/StudentRegistrationList'
 
 
 export default function Navigation() {
