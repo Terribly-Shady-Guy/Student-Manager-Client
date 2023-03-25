@@ -6,7 +6,7 @@ import StudentForm from './pages/StudentForm'
 import StudentRegistrationList from './pages/StudentRegistrationList'
 
 
-export default function Navigatiom() {
+export default function Navigation() {
   return (
     <Router>
         <nav>
