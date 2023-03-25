@@ -4,7 +4,13 @@ import Navigation from './components/Navigation'
 function App() {
   return (
     <div className="App">
-      <Navigation />
+      <header>
+        <h1>Buffalo College</h1>
+        <Navigation />
+      </header>
+      <footer>
+        <p>Test</p>
+      </footer>
     </div>
   )
 }
