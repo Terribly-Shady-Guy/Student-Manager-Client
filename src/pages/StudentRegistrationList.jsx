@@ -25,11 +25,19 @@ export default function StudentRegistrationList() {
       ]
     }
   ]
+
+  const deansList = testStudents.filter(student => student.gpa >= 3.5);
+
   return (
     <>
       <h3>Students</h3>
       <section>
+        <h4>Registered Students</h4>
         {testStudents.map((student, index) => <Student props={student} key={index} />)}
+      </section>
+      <section>
+        <h4>Dean's List</h4>
+        {deansList.map((student, index) => <h5 key={index}>{student.firstName} {student.lastName}</h5>)}
       </section>
     </>
   )
