@@ -5,7 +5,6 @@ import SignUp from '../pages/SignUp'
 import StudentForm from '../pages/StudentForm'
 import StudentRegistrationList from '../pages/StudentRegistrationList'
 
-
 export default function Navigation() {
   return (
     <Router>
