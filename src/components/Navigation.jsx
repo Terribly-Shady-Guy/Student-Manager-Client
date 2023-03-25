@@ -13,14 +13,14 @@ export default function Navigation() {
         <Link to='/'>Home</Link>
         <Link to='/login'>Login</Link>
         <Link to='/signup'>Sign Up</Link>
-        <Link to='/studentform'>Register</Link>
+        <Link to='/studentregistrationform'>Register</Link>
         <Link to='/studentregistrationlist'>Student Registrations</Link>
       </nav>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />
-        <Route path='/studentform' element={<StudentRegistrationForm />} />
+        <Route path='/studentregistrationform' element={<StudentRegistrationForm />} />
         <Route path='/studentregistrationlist' element={<StudentRegistrationList />} />
       </Routes>
     </Router>
