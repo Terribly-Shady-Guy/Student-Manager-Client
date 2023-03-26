@@ -10,7 +10,6 @@ const SignUp = React.lazy(() => import('./pages/SignUp'));
 const StudentRegistrationForm = React.lazy(() => import('./pages/StudentRegistrationForm'));
 const StudentRegistrationList = React.lazy(() => import('./pages/StudentRegistrationList'));
 
-
 function App() {
 
   useEffect(() => {
