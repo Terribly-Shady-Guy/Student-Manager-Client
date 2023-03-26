@@ -5,14 +5,14 @@ export default function LoginForm() {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = async (formData) => {
-    const response = await fetch("http://localhost:5119/api/authentication", {
+    const response = await fetch("http://localhost:5119/api/authentication/login", {
       method: "POST",
       headers: {"content-type": "application/json"},
       body: JSON.stringify(formData)
     });
 
     if (response.ok) {
-      const token = await response.json();
+      const token = await response.text();
 
       window.localStorage.setItem("accessToken", token);
     }
