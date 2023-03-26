@@ -21,9 +21,9 @@ export default function LoginForm() {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <label htmlFor='username'>Username: </label>
-      <input type="text" {...register("username", { require: true})} id="username" />
+      <input type="text" {...register("username", { required: true})} id="username" />
       <label htmlFor='password'>Password: </label>
-      <input type="password" {...register("password", { require: true})} id="password" />
+      <input type="password" {...register("password", { required: true})} id="password" />
       <button type="submit">Login</button>
     </form>
   )
