@@ -26,6 +26,7 @@ function App() {
 
     const response = await fetch("http://localhost:5119/api/authentication/refreshtokens", {
       method: "POST",
+      credentials: "include",
       headers: {"content-type": "application/json"},
       body: JSON.stringify(token)
     });
