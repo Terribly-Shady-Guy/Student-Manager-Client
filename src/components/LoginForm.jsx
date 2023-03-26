@@ -1,10 +1,8 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { useLoggedInStore } from '../store/store';
 
 export default function LoginForm() {
   const { register, handleSubmit } = useForm();
-  const [setLoginStatus] = useLoggedInStore((state) => [state.setLoginStatus]);
 
   const onSubmit = async (formData) => {
     const response = await fetch("http://localhost:5119/api/authentication/login", {
@@ -17,7 +15,6 @@ export default function LoginForm() {
       const token = await response.text();
 
       window.localStorage.setItem("accessToken", token);
-      setLoginStatus(true);
     }
   }
 
