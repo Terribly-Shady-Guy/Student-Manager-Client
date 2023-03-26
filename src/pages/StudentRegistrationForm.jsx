@@ -6,8 +6,9 @@ export default function StudentRegistrationForm() {
   return (
     <>
       <h2>Register</h2>
-      <StudentForm />
-      <RegistrationForm />
+      <StudentForm>
+        <RegistrationForm />
+      </StudentForm>
     </>
   )
 }

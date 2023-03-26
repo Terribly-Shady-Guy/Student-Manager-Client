@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function StudentForm() {
+export default function StudentForm(props) {
   return (
     <form>
         <label htmlFor='input-first-name'>First Name: </label>
@@ -13,6 +13,7 @@ export default function StudentForm() {
         <input type="date" name="expectedGradDatw" id="input-exp-grad-date" />
         <label htmlFor="input-gpa">GPA: </label>
         <input type="number" name="gpa" id="input-gpa" />
+        {props.children}
         <button type='button'>Register</button>
     </form>
   )

@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function RegistrationForm() {
   return (
-    <form>
+    <div>
         <label htmlFor='select-class'>Class: </label>
         <select id='select-class' name='classNumber'>
             <option value={"CSCI 1101"}>CSCI 1101</option>
@@ -28,6 +28,6 @@ export default function RegistrationForm() {
             <input type="checkbox" name="bookFormat" id="checkbox-audio" />
         </fieldset>
         <button type='button'>Add Class</button>
-    </form>
+    </div>
   )
 }
