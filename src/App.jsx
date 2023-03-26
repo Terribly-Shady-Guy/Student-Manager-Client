@@ -1,4 +1,4 @@
-import './App.css'
+import './css/App.css'
 import React, { useEffect } from "react"
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 
