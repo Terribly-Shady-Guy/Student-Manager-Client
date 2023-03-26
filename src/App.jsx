@@ -48,7 +48,7 @@ function App() {
           <Link to='/studentregistrationlist'>Student Registrations</Link>
           <Link to="/newcourse">New Course</Link>
         </nav>
-        <React.Suspense fallback={<p>Loading...</p>}>
+        <React.Suspense fallback={<h2>Loading...</h2>}>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/login' element={<Login />} />

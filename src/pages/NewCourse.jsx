@@ -4,7 +4,7 @@ import CourseForm from '../components/CourseForm'
 export default function NewCourse() {
   return (
     <>
-        <h3>Add New Course</h3>
+        <h2>Add New Course</h2>
         <CourseForm />
     </>
   )

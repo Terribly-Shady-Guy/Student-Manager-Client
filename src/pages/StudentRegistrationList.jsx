@@ -30,13 +30,13 @@ export default function StudentRegistrationList() {
 
   return (
     <>
-      <h3>Students</h3>
+      <h2>Students</h2>
       <section>
-        <h4>Registered Students</h4>
+        <h3>Registered Students</h3>
         {testStudents.map((student, index) => <Student props={student} key={index} />)}
       </section>
       <section>
-        <h4>Dean's List</h4>
+        <h3>Dean's List</h3>
         {deansList.map((student, index) => <h5 key={index}>{student.firstName} {student.lastName}</h5>)}
       </section>
     </>

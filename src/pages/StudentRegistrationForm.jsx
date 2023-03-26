@@ -5,7 +5,7 @@ import StudentForm from '../components/StudentForm'
 export default function StudentRegistrationForm() {
   return (
     <>
-      <h3>Register</h3>
+      <h2>Register</h2>
       <StudentForm />
       <RegistrationForm />
     </>
