@@ -17,7 +17,7 @@ export default function LoginForm() {
     if (response.ok) {
       const token = await response.json();
       dispatch(setLoginStatus({isLoggedIn: true, isAdmin: token.isAdmin}));
-      window.localStorage.setItem("accessToken", token);
+      window.localStorage.setItem("accessToken", token.accessToken);
     }
   }
 
