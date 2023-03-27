@@ -1,6 +1,8 @@
 import './css/App.css'
 import React, { useEffect } from "react"
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { store } from './store/store'
 
 const Home = React.lazy(() => import('./pages/Home'));
 const Login = React.lazy(() => import("./pages/Login"));
@@ -50,15 +52,17 @@ function App() {
           <Link to="/newcourse">New Course</Link>
         </nav>
         <React.Suspense fallback={<h2>Loading...</h2>}>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/signup' element={<SignUp />} />
-            <Route path='/studentregistrationform' element={<StudentRegistrationForm />} />
-            <Route path='/studentregistrationlist' element={<StudentRegistrationList />} />
-            <Route path='/newcourse' element={<NewCourse />} />
-            <Route path='*' element={<NotFound />} />
-          </Routes>
+          <Provider store={store}>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/login' element={<Login />} />
+              <Route path='/signup' element={<SignUp />} />
+              <Route path='/studentregistrationform' element={<StudentRegistrationForm />} />
+              <Route path='/studentregistrationlist' element={<StudentRegistrationList />} />
+              <Route path='/newcourse' element={<NewCourse />} />
+              <Route path='*' element={<NotFound />} />
+            </Routes>
+          </Provider>
         </React.Suspense>
       </Router>
     </div>

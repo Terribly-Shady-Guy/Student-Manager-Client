@@ -1,8 +1,11 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { setLoginStatus } from '../store/store';
+import { useDispatch } from 'react-redux';
 
 export default function LoginForm() {
   const { register, handleSubmit } = useForm();
+  const dispatch = useDispatch();
 
   const onSubmit = async (formData) => {
     const response = await fetch("http://localhost:5119/api/authentication/login", {
@@ -13,7 +16,7 @@ export default function LoginForm() {
 
     if (response.ok) {
       const token = await response.text();
-
+      dispatch(setLoginStatus({isLoggedIn: true, isAdmin: false}));
       window.localStorage.setItem("accessToken", token);
     }
   }
