@@ -1,7 +1,8 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { setLoginStatus } from '../store/store';
+import { setLoginStatus, setRefreshIntervalId } from '../store/store';
 import { useDispatch } from 'react-redux';
+import { setRefreshInterval } from '../Functions/RefreshTokens';
 
 export default function LoginForm() {
   const { register, handleSubmit } = useForm();
@@ -18,6 +19,8 @@ export default function LoginForm() {
       const token = await response.json();
       dispatch(setLoginStatus({isLoggedIn: true, isAdmin: token.isAdmin}));
       window.localStorage.setItem("accessToken", token.accessToken);
+      const refreshIntervalId = setRefreshInterval();
+      dispatch(setRefreshIntervalId({refreshIntervalId: refreshIntervalId}));
     }
   }
 

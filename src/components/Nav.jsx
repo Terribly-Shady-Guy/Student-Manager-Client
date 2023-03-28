@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector} from 'react-redux'
 
 const Home = React.lazy(() => import('../pages/Home'));
 const Login = React.lazy(() => import("../pages/Login"));
@@ -10,9 +10,9 @@ const SignUp = React.lazy(() => import('../pages/SignUp'));
 const StudentRegistrationForm = React.lazy(() => import('../pages/StudentRegistrationForm'));
 const StudentRegistrationList = React.lazy(() => import('../pages/StudentRegistrationList'));
 
-
 export default function Nav() {
-  const { isLoggedIn, isAdmin } = useSelector((state) => state.login.value);
+  const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
+  const isAdmin = useSelector((state) => state.login.isAdmin);
 
   return (
     <Router>
