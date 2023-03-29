@@ -1,8 +1,8 @@
 import React from 'react'
-import { useFormContext } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 
-export default function RegistrationForm() {
-  const {register} = useFormContext();
+export default function RegistrationForm({ addRegistration }) {
+  const { register, handleSubmit } = useForm();
 
   return (
     <div>
@@ -30,7 +30,7 @@ export default function RegistrationForm() {
             <label htmlFor='checkbox-audio'>Audio</label>
             <input type="checkbox" {...register("bookFormat")} id="checkbox-audio" value="Audio" />
         </fieldset>
-        <button type='button'>Add Class</button>
+        <button type='button' onClick={handleSubmit(addRegistration)}>Add Class</button>
     </div>
   )
 }

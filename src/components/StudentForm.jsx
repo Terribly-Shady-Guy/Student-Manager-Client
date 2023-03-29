@@ -1,11 +1,16 @@
 import React from 'react'
-import { useFormContext } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 
 export default function StudentForm(props) {
-  const {register, handleSubmit} = useFormContext();
+  const {register, handleSubmit} = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    const studentRegistration = {
+      ...data,
+      registrations: props.registrations
+    };
+
+    console.log(studentRegistration);
   }
 
   return (
