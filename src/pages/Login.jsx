@@ -19,7 +19,6 @@ export default function Login() {
     if (response.ok) {
       clearInterval(refreshIntervalId);
       dispatch(resetloginStatus());
-      dispatch(setRefreshIntervalId({refreshIntervalId: null}));
       window.localStorage.removeItem("accessToken");
     }
   }

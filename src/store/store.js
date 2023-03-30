@@ -13,13 +13,12 @@ const loginSlice = createSlice({
         setLoginStatus: (state, action) => {
             state.isLoggedIn = action.payload.isLoggedIn;
             state.isAdmin = action.payload.isAdmin;
+            state.refreshintervalId = action.payload.refreshintervalId;
         },
         resetloginStatus: (state) => {
             state.isLoggedIn = initialState.isLoggedIn;
             state.isAdmin = initialState.isAdmin;
-        },
-        setRefreshIntervalId: (state, action) => {
-            state.refreshintervalId = action.payload.refreshintervalId;
+            state.refreshintervalId = initialState.refreshintervalId;
         }
     }
 });
