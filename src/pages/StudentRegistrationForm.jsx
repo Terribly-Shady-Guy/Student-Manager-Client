@@ -16,7 +16,19 @@ export default function StudentRegistrationForm() {
       <StudentForm registrations={registrations}>
         <RegistrationForm addRegistration={addRegistration} />
       </StudentForm>
-      <Registration props={registrations} />
+      <table>
+        <thead>
+          <tr>
+            <th>Course #</th>
+            <th>Credits</th>
+            <th>Attendence Type</th>
+            <th>Book Format</th>
+          </tr>
+        </thead>
+        <tbody>
+          {registrations.map((item, index) => <Registration props={item} key={index} />)}
+        </tbody>
+      </table>
     </>
   )
 }
