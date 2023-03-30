@@ -12,17 +12,17 @@ export default function Registration({props}) {
 
   return (
     <table>
-    <thead>
-      <tr>
-        <th>Course #</th>
-        <th>Credits</th>
-        <th>Attendence Type</th>
-        <th>Book Format</th>
-      </tr>
-    </thead>
-    <tbody>
-      {registrations}
-    </tbody>
-  </table>
+      <thead>
+        <tr>
+          <th>Course #</th>
+          <th>Credits</th>
+          <th>Attendence Type</th>
+          <th>Book Format</th>
+        </tr>
+      </thead>
+      <tbody>
+        {registrations}
+      </tbody>
+    </table>
   )
 }
