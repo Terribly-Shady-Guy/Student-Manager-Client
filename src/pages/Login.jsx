@@ -1,6 +1,6 @@
 import React from 'react'
 import LoginForm from '../components/LoginForm'
-import { resetloginStatus, setRefreshIntervalId } from '../store/store';
+import { resetLoginStatus } from '../store/store';
 import { useDispatch, useSelector } from 'react-redux';
 
 export default function Login() {
@@ -18,7 +18,7 @@ export default function Login() {
 
     if (response.ok) {
       clearInterval(refreshIntervalId);
-      dispatch(resetloginStatus());
+      dispatch(resetLoginStatus());
       window.localStorage.removeItem("accessToken");
     }
   }
