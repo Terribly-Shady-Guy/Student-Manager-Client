@@ -4,9 +4,9 @@ import { useForm } from 'react-hook-form'
 export default function StudentForm(props) {
   const {register, handleSubmit} = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = (studentData) => {
     const studentRegistration = {
-      ...data,
+      ...studentData,
       registrations: props.registrations
     };
 
