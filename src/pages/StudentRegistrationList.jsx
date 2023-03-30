@@ -1,5 +1,6 @@
 import React from 'react'
 import Student from '../components/Student'
+import Registration from './Registration';
 
 export default function StudentRegistrationList() {
   const testStudents = [
@@ -26,6 +27,12 @@ export default function StudentRegistrationList() {
     }
   ]
 
+  const studentlist = testStudents.map((student, index) => (
+    <Student props={student} key={index}>
+      <Registration props={student.registrations} />
+    </Student>
+  ));
+  
   const deansList = testStudents.filter(student => student.gpa >= 3.5);
 
   return (
@@ -33,7 +40,7 @@ export default function StudentRegistrationList() {
       <h2>Students</h2>
       <section>
         <h3>Registered Students</h3>
-        {testStudents.map((student, index) => <Student props={student} key={index} />)}
+        {studentlist}
       </section>
       <section>
         <h3>Dean's List</h3>

@@ -1,7 +1,6 @@
 import React from 'react'
-import Registration from './Registration';
 
-export default function Student({props}) {
+export default function Student({props, children}) {
   let grade = "";
   if (props.gpa > 3) {
     grade = "A";
@@ -22,7 +21,7 @@ export default function Student({props}) {
       <li>Expected Graduation Date: {props.expectedGradDate}</li>
       <li>GPA: {props.gpa}</li>
       <li>Grade: {grade}</li>
-      <Registration props={props.registrations} />
+      {children}
     </ul>
   )
 }
