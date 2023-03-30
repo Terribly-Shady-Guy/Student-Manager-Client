@@ -1,18 +1,33 @@
 import React from 'react'
+import { useForm } from 'react-hook-form'
 
 export default function SignUpForm() {
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = async (user) => {
+    await fetch("http://localhost:5119/api/user", {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "content-type": "application/json",
+        Authorization: `Bearer ${window.localStorage.getItem("accessTkoen")}`
+      },
+      body: JSON.stringify(user)
+    });
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit(onSubmit)}>
         <label htmlFor="first-name">First Name: </label>
-        <input type="text" name="firstName" id="first-name" />
+        <input type="text" {...register("firstName")} id="first-name" />
         <label htmlFor="last-name">Last Name: </label>
-        <input type="text" name="lastName" id="last-name" />
+        <input type="text" {...register("lastName")} id="last-name" />
         <label htmlFor="email">Email: </label>
-        <input type="email" name="email" id="email" />
+        <input type="email" {...register("email")} id="email" />
         <label htmlFor="username">Username: </label>
-        <input type="text" name="username" id="username" />
+        <input type="text" {...register("username")} id="username" />
         <label htmlFor="password">Password: </label>
-        <input type="password" name="password" id="password" />
+        <input type="password" {...register("password")} id="password" />
         <button type='button'>Create</button>
     </form>
   )
