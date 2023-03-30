@@ -9,7 +9,7 @@ export default function Login() {
   const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
   const refreshIntervalId = useSelector((state) => state.login.refreshIntervalId);
 
-  async function handleClick() {
+  const handleClick = async () => {
     const response = await fetch("http://localhost:5119/api/authentication/logout", {
       method: "POST",
       credentials: "include",
