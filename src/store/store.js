@@ -3,7 +3,7 @@ import { configureStore, createSlice } from '@reduxjs/toolkit'
 const initialState = {
     isLoggedIn: false,
     isAdmin: false,
-    refreshintervalId: null
+    refreshIntervalId: null
 };
 
 const loginSlice = createSlice({
@@ -13,12 +13,12 @@ const loginSlice = createSlice({
         setLoginStatus: (state, action) => {
             state.isLoggedIn = action.payload.isLoggedIn;
             state.isAdmin = action.payload.isAdmin;
-            state.refreshintervalId = action.payload.refreshintervalId;
+            state.refreshintervalId = action.payload.refreshIntervalId;
         },
         resetLoginStatus: (state) => {
             state.isLoggedIn = initialState.isLoggedIn;
             state.isAdmin = initialState.isAdmin;
-            state.refreshintervalId = initialState.refreshintervalId;
+            state.refreshintervalId = initialState.refreshIntervalId;
         }
     }
 });
