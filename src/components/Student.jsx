@@ -22,19 +22,7 @@ export default function Student({props}) {
       <li>Expected Graduation Date: {props.expectedGradDate}</li>
       <li>GPA: {props.gpa}</li>
       <li>Grade: {grade}</li>
-      <table>
-        <thead>
-          <tr>
-            <th>Class</th>
-            <th>Credits</th>
-            <th>Attendence Type</th>
-            <th>Book Format</th>
-          </tr>
-        </thead>
-        <tbody>
-            {props.registrations.map((registration, index) => <Registration props={registration} key={index} />)}
-        </tbody>
-      </table>
+      <Registration props={props.registrations} />
     </ul>
   )
 }
