@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import RegistrationForm from '../components/RegistrationForm'
 import StudentForm from '../components/StudentForm'
+import Registration from '../components/Registration';
 
 export default function StudentRegistrationForm() {
   const [registrations, setRegistrations] = useState([]);
@@ -25,14 +26,7 @@ export default function StudentRegistrationForm() {
           </tr>
         </thead>
         <tbody>
-          {registrations.map((item, index) => (
-          <tr key={index}>
-            <td>{item.courseNumber}</td>
-            <td>{item.credits}</td>
-            <td>{item.attendenceType}</td>
-            <td>{item.bookFormat}</td>
-          </tr>
-          ))}
+          {registrations.map((item, index) => <Registration props={item} key={index} />)}
         </tbody>
       </table>
     </>
