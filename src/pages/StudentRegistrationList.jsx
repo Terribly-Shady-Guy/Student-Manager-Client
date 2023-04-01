@@ -1,39 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Student from '../components/Student'
 import Registration from './Registration';
 
 export default function StudentRegistrationList() {
-  const testStudents = [
-    {
-      firstName: "John",
-      lastName: "Doe",
-      major: "Computer Science",
-      expectedGradDate: "2027-05-16",
-      gpa: 3.6,
-      registrations: [
-        {
-          courseNumber: "CSCI 1101",
-          attendenceType: "Face-to-Face",
-          credits: 3,
-          bookFormat: "Physical"
-        },
-        {
-          courseNumber: "MATH 1101",
-          attendenceType: "Asyncronous Online",
-          credits: 3,
-          bookFormat: "Digital, Audio"
-        }
-      ]
-    }
-  ]
+  const [students, setStudents] = useState([]);
 
-  const studentlist = testStudents.map((student, index) => (
+  useEffect(() => {
+    const controller = new AbortController();
+
+    fetch("http://localhosr:5119/api/studentregistration", {
+      signal: controller.signal
+    })
+    .then((response) => response.json())
+    .then((data) => setStudents(data));
+
+    return () => controller.abort();
+  })
+
+  const studentlist = students.map((student, index) => (
     <Student props={student} key={index}>
       <Registration props={student.registrations} />
     </Student>
   ));
   
-  const deansList = testStudents.filter(student => student.gpa >= 3.5);
+  const deansList = students.filter(student => student.gpa >= 3.5);
 
   return (
     <>
