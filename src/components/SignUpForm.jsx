@@ -10,7 +10,7 @@ export default function SignUpForm() {
       credentials: "include",
       headers: {
         "content-type": "application/json",
-        Authorization: `Bearer ${window.localStorage.getItem("accessTkoen")}`
+        Authorization: `Bearer ${window.localStorage.getItem("accessToken")}`
       },
       body: JSON.stringify(user)
     });
