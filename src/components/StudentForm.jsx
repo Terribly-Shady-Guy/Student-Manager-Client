@@ -4,13 +4,21 @@ import { useForm } from 'react-hook-form'
 export default function StudentForm(props) {
   const {register, handleSubmit} = useForm();
 
-  const onSubmit = (studentData) => {
+  const onSubmit = async (studentData) => {
     const studentRegistration = {
       ...studentData,
       registrations: props.registrations
     };
 
-    console.log(studentRegistration);
+    await fetch("http://localhost:5119/api/studentregistration", {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "content-type": "application/json",
+        Authorization: `Bearer ${window.localStorage.getItem("accessToken")}`
+      },
+      body: JSON.stringify(studentRegistration)
+    });
   }
 
   return (
