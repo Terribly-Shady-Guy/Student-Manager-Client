@@ -8,7 +8,7 @@ export default function StudentRegistrationList() {
   useEffect(() => {
     const controller = new AbortController();
 
-    fetch("http://localhosr:5119/api/studentregistration", {
+    fetch("http://localhost:5119/api/studentregistration", {
       signal: controller.signal
     })
     .then((response) => response.json())
