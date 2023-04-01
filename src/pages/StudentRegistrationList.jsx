@@ -17,7 +17,7 @@ export default function StudentRegistrationList() {
     return () => controller.abort();
   })
 
-  const studentlist = students.map((student, index) => (
+  const studentList = students.map((student, index) => (
     <Student props={student} key={index}>
       <Registration props={student.registrations} />
     </Student>
@@ -30,7 +30,7 @@ export default function StudentRegistrationList() {
       <h2>Students</h2>
       <section>
         <h3>Registered Students</h3>
-        {studentlist}
+        {studentList}
       </section>
       <section>
         <h3>Dean's List</h3>
