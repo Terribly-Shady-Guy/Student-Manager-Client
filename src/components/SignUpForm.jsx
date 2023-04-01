@@ -28,7 +28,7 @@ export default function SignUpForm() {
         <input type="text" {...register("username")} id="username" />
         <label htmlFor="password">Password: </label>
         <input type="password" {...register("password")} id="password" />
-        <button type='button'>Create</button>
+        <button type='submit'>Create</button>
     </form>
   )
 }
