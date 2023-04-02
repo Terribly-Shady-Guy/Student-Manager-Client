@@ -15,7 +15,7 @@ export default function StudentRegistrationList() {
     .then((data) => setStudents(data));
 
     return () => controller.abort();
-  })
+  }, []);
 
   const studentList = students.map((student, index) => (
     <Student props={student} key={index}>
