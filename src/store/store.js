@@ -23,7 +23,7 @@ const loginSlice = createSlice({
     }
 });
 
-export const { setLoginStatus, resetloginStatus, setRefreshIntervalId } = loginSlice.actions;
+export const { setLoginStatus, resetloginStatus } = loginSlice.actions;
 
 export const store = configureStore({
     reducer: {
