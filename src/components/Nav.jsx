@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
-import { useSelector} from 'react-redux'
+import { useSelector } from 'react-redux'
 
 const Home = React.lazy(() => import('../pages/Home'));
 const Login = React.lazy(() => import("../pages/Login"));
