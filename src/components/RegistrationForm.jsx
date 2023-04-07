@@ -1,14 +1,27 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 
 export default function RegistrationForm({ addRegistration }) {
   const { register, handleSubmit } = useForm();
+  const [courseNumbers, setCourseNumbers] = useState([]);
+  
+  useEffect(() => {
+    const controller = new AbortController();
+
+    fetch("http://localhost:5119/api/courses", {
+      signal: controller.signal
+    })
+    .then((response) => response.json())
+    .then((data) => setCourseNumbers(data));
+
+    return () => controller.abort();
+  })
 
   return (
     <div>
         <label htmlFor='select-class'>Class: </label>
         <select id='select-class' {...register("classNumber", {required: true})}>
-            <option value={"CSCI 1101"}>CSCI 1101</option>
+            {courseNumbers.map((courseNumber, index) => <option value={courseNumber} key={index}>{courseNumber}</option>)}
         </select>
         <label htmlFor="input-credits">Credits: </label>
         <input type="number" {...register("credits", {required: true})} id="input-credits" />
