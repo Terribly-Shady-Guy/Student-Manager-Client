@@ -15,7 +15,7 @@ export default function RegistrationForm({ addRegistration }) {
     .then((data) => setCourseNumbers(data));
 
     return () => controller.abort();
-  })
+  }, [])
 
   return (
     <div>
