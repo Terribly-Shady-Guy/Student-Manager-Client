@@ -23,7 +23,8 @@ export default function StudentRegistrationList() {
     </Student>
   ));
   
-  const deansList = students.filter(student => student.gpa >= 3.5);
+  const deansList = students.filter(student => student.gpa >= 3.5)
+  .map((student, index) => <h4 key={index}>{student.firstName} {student.lastName}</h4>);
 
   return (
     <>
@@ -34,7 +35,7 @@ export default function StudentRegistrationList() {
       </section>
       <section>
         <h3>Dean's List</h3>
-        {deansList.map((student, index) => <h5 key={index}>{student.firstName} {student.lastName}</h5>)}
+        {deansList}
       </section>
     </>
   )
