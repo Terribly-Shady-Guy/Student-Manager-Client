@@ -6,8 +6,10 @@ import { useDispatch, useSelector } from 'react-redux';
 export default function Login() {
 
   const dispatch = useDispatch();
-  const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
-  const refreshIntervalId = useSelector((state) => state.login.refreshIntervalId);
+  const { isLoggedIn, refreshIntervalId } = useSelector((state) => ({
+    isLoggedIn: state.isLoggedIn,
+    refreshIntervalId: state.refreshIntervalId
+  }));
 
   const handleClick = async () => {
     const response = await fetch("http://localhost:5119/api/authentication/logout", {

@@ -18,7 +18,7 @@ function App() {
     let refreshIntervalId = setRefreshInterval();
 
     return () => clearInterval(refreshIntervalId)
-  }, [])
+  }, []);
 
   return (
     <div className="App">
