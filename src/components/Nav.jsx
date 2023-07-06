@@ -11,12 +11,10 @@ const StudentRegistrationForm = React.lazy(() => import('../pages/StudentRegistr
 const StudentRegistrationList = React.lazy(() => import('../pages/StudentRegistrationList'));
 
 export default function Nav() {
-  const { isLoggedIn, isAdmin } = useSelector((state) => {
-    return {
+  const { isLoggedIn, isAdmin } = useSelector((state) => ({
       isLoggedIn: state.isLoggedIn,
       isAdmin: state.isAdmin
-    }
-  });
+    }));
 
   return (
     <Router>
