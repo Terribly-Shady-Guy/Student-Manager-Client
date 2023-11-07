@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Student from '../components/Student'
-import Registration from './Registration';
+import Registration from '../components/Registration'
 
 export default function StudentRegistrationList() {
   const [students, setStudents] = useState([]);

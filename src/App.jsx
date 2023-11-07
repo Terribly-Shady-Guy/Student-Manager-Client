@@ -1,9 +1,9 @@
 import './css/App.css'
 import React, { useEffect } from "react"
-import { Provider } from 'react-redux';
-import { store } from './store/store'
-import Nav from './components/Nav';
 
+import { useSelector } from 'react-redux'
+
+import { Outlet, Link } from 'react-router-dom';
 import { refreshTokens, setRefreshInterval } from './Functions/RefreshTokens';
 
 function App() {
@@ -20,11 +20,22 @@ function App() {
     return () => clearInterval(refreshIntervalId)
   }, []);
 
+  const { isLoggedIn, isAdmin } = useSelector((state) => ({
+    isLoggedIn: state.isLoggedIn,
+    isAdmin: state.isAdmin
+  }));
+
   return (
     <div className="App">
-      <Provider store={store}>
-        <Nav />
-      </Provider>
+      <nav>
+        <Link to='/'>Home</Link>
+        <Link to='/login'>Login</Link>
+        {isAdmin && <Link to='/signup'>Sign Up</Link>}
+        {isLoggedIn && <Link to='/studentregistrationform'>Register</Link>}
+        <Link to='/studentregistrationlist'>Student Registrations</Link>
+        {isAdmin && <Link to="/newcourse">New Course</Link>}
+      </nav>
+      <Outlet />
     </div>
   )
 }
