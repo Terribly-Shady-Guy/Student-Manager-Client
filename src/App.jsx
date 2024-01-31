@@ -1,24 +1,29 @@
 import './css/App.css'
 import React, { useEffect } from "react"
 
-import { useSelector } from 'react-redux'
-
+import { useSelector, useDispatch } from 'react-redux'
 import { Outlet, Link } from 'react-router-dom';
+
 import { refreshTokens, setRefreshInterval } from './Functions/RefreshTokens';
+import { setRefreshIntervalId } from './store/store';
 
 function App() {
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    refreshTokens()
     const token = window.localStorage.getItem("accessToken");
 
     if (token === null) {
       return;
     }
 
+    refreshTokens(token);
+
     let refreshIntervalId = setRefreshInterval();
+    dispatch(setRefreshIntervalId(refreshIntervalId));
 
     return () => clearInterval(refreshIntervalId)
-  }, []);
+  }, [dispatch]);
 
   const { isLoggedIn, isAdmin } = useSelector((state) => ({
     isLoggedIn: state.isLoggedIn,

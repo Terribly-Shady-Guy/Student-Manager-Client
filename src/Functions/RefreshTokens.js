@@ -1,10 +1,11 @@
 export function setRefreshInterval() {
-    return setInterval(() => refreshTokens(), 5 * 1000 * 60);
+    return setInterval(() => {
+        const token = window.localStorage.getItem("accessToken");
+        refreshTokens(token);
+    }, 5 * 1000 * 60);
 }
 
-export function refreshTokens() {
-    const token = window.localStorage.getItem("accessToken");
-
+export function refreshTokens(token) {
     if (token === null) {
         return;
     }

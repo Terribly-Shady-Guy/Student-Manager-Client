@@ -15,6 +15,9 @@ const loginSlice = createSlice({
             state.isAdmin = action.payload.isAdmin;
             state.refreshIntervalId = action.payload.refreshIntervalId;
         },
+        setRefreshIntervalId: (state, action) => {
+            state.refreshIntervalId = action.payload.refreshIntervalId;
+        },
         resetLoginStatus: (state) => {
             state.isLoggedIn = initialState.isLoggedIn;
             state.isAdmin = initialState.isAdmin;
@@ -23,7 +26,7 @@ const loginSlice = createSlice({
     }
 });
 
-export const { setLoginStatus, resetLoginStatus } = loginSlice.actions;
+export const { setLoginStatus, resetLoginStatus, setRefreshIntervalId } = loginSlice.actions;
 
 export const store = configureStore({
     reducer: {
