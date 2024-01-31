@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import RegistrationForm from '../components/RegistrationForm'
 import StudentForm from '../components/StudentForm'
-import Registration from '../components/Registration';
+import RegistrationTable from '../components/RegistrationTable';
 
 export default function StudentRegistrationForm() {
   const [registrations, setRegistrations] = useState([]);
@@ -16,7 +16,7 @@ export default function StudentRegistrationForm() {
       <StudentForm registrations={registrations}>
         <RegistrationForm addRegistration={addRegistration} />
       </StudentForm>
-      <Registration props={registrations} />
+      <RegistrationTable registrationList={registrations} />
     </>
   )
 }

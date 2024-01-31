@@ -1,14 +1,14 @@
 import React from 'react'
 
-export default function Student({props, children}) {
+export default function Student({student, children}) {
   let grade = "";
-  if (props.gpa > 3) {
+  if (student.gpa > 3) {
     grade = "A";
-  } else if (props.gpa > 2) {
+  } else if (student.gpa > 2) {
     grade = "B";
-  } else if (props.gpa > 1) {
+  } else if (student.gpa > 1) {
     grade = "C";
-  } else if (props.gpa > 0) {
+  } else if (student.gpa > 0) {
     grade = "D"
   } else {
     grade = "F";
@@ -16,10 +16,10 @@ export default function Student({props, children}) {
 
   return (
     <ul className='student'>
-      <li>Name: {props.firstName} {props.lastName}</li>
-      <li>Major: {props.major}</li>
-      <li>Expected Graduation Date: {props.expectedGradDate}</li>
-      <li>GPA: {props.gpa}</li>
+      <li>Name: {student.firstName} {student.lastName}</li>
+      <li>Major: {student.major}</li>
+      <li>Expected Graduation Date: {student.expectedGradDate}</li>
+      <li>GPA: {student.gpa}</li>
       <li>Grade: {grade}</li>
       {children}
     </ul>

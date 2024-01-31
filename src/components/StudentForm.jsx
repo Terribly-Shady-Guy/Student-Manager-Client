@@ -1,13 +1,13 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 
-export default function StudentForm(props) {
+export default function StudentForm({registrations, children}) {
   const {register, handleSubmit} = useForm();
 
   const onSubmit = async (studentData) => {
     const studentRegistration = {
       ...studentData,
-      registrations: props.registrations
+      registrations: registrations
     };
 
     await fetch("http://localhost:5119/api/studentregistration", {
@@ -33,7 +33,7 @@ export default function StudentForm(props) {
       <input type="date" {...register("expectedGradDate", {required: true})} id="input-exp-grad-date" />
       <label htmlFor="input-gpa">GPA: </label>
       <input type="number" {...register("gpa", {required: true})} id="input-gpa" />
-      {props.children}
+      {children}
       <button type='submit'>Register</button>
     </form>
   )
