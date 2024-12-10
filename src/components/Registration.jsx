@@ -5,6 +5,6 @@ export default function Registration({ registrationItem }) {
             <td>{registrationItem.credits}</td>
             <td>{registrationItem.attendenceType}</td>
             <td>{registrationItem.bookFormat}</td>
-      </tr>
+        </tr>
     );
 }
